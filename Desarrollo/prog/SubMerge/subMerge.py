@@ -1,11 +1,12 @@
 import os
-
+import sys
 #p = os.popen("comando")
 #p.readline();p.read()
 
-_FOLDER_WORK_ = "/home/npersia/prog/pruebas/"
-_FOLDER_ = "series/"
-_TMP_FOLDER_ = "tmp/" #se creara en el mismo directorio que esta _FOLDER_
+
+_FOLDER_WORK_ = sys.argv[1] #"/home/npersia/prog/pruebas/"
+_FOLDER_ = sys.argv[2] #"series/"
+_TMP_FOLDER_ = sys.argv[3] #"tmp/" #se creara en el mismo directorio que esta _FOLDER_
 
 class Movie:
 	def __init__(self,mov=None,sub=None):
