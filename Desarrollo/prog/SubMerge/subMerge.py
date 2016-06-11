@@ -15,8 +15,9 @@ class Movie:
 		self.tmp_mov = self.mov.replace(_FOLDER_,_TMP_FOLDER_+_FOLDER_).replace(ext,"mkv")
 
 	def merge(self):
-		print "MEZCLANDO ",self.mov," Y ",self.sub," EN >> ",self.tmp_mov
-		os.system("touch "+ self.tmp_mov)
+		toUtf8(self.sub)
+		os.system("mkvmerge -o " + self.tmp_mov +" "+ self.mov +" "+ self.sub)
+
 
 	def deleteOriginalFiles(self):
 		os.system("rm '"+ self.mov+"'")
@@ -33,6 +34,13 @@ class Movie:
 		self.deleteOriginalFiles()
 		self.moveTmpFiles()
 
+
+
+def toUtf8(FILE):
+	if "8859" in os.popen("file "+FILE).read():
+		os.system("iconv -f ISO-8859-1 -t UTF-8 "+FILE+" -o "+FILE+".utf8")
+		os.system("rm "+FILE)
+		os.system("mv "+FILE+".utf8 "+FILE)
 
 def generateFolderTree():
 	os.system("mkdir "+_FOLDER_WORK_+_TMP_FOLDER_)
