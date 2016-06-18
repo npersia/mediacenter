@@ -45,7 +45,7 @@ def toUtf8(FILE):
 
 def generateFolderTree():
 	os.system("mkdir "+_FOLDER_WORK_+_TMP_FOLDER_)
-	os.system("mkdir "+_FOLDER_WORK_+_TMP_FOLDER_+_FOLDER_)
+	#os.system("mkdir "+_FOLDER_WORK_+_TMP_FOLDER_+_FOLDER_)
 	folders = os.popen("ls " + _FOLDER_WORK_ + _FOLDER_ + " -R | grep /|cut -d ':' -f 1").read().split("\n")[:-1]
 	for f in folders:
 		os.system("mkdir " + f.replace(_FOLDER_,_TMP_FOLDER_+_FOLDER_))
@@ -75,11 +75,12 @@ def getFileNameWithoutFormat(f):
 		fNstring += fileN[-1]
 	return fNstring
 
-
+print "generateFolderTree"
 generateFolderTree()
 #print findFilesType(_FOLDER_WORK_+_FOLDER_,["mp4","srt"])
 
-moviesList = findFilesType(_FOLDER_WORK_+_FOLDER_,["mp4"])
+print "crea hashes"
+moviesList = findFilesType(_FOLDER_WORK_+_FOLDER_,["mp4","mkv"])
 subtitlesList = findFilesType(_FOLDER_WORK_+_FOLDER_,["srt"])
 
 moviesHash = {}
@@ -98,10 +99,9 @@ def processHash():
 			if (m in s) or (s in m):
 				msHash[m] = Movie(moviesHash[m],subtitlesHash[s])
 				break
-			
 processHash()
 
 for ms in msHash:
 	msHash[ms].proc()
-
+print "deleteFolderTree"
 deleteFolderTree()
