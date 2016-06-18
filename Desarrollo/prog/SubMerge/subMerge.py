@@ -21,6 +21,8 @@ class Movie:
 
 
 	def deleteOriginalFiles(self):
+		os.system("chmod 777 '"+ self.mov+"'")
+		os.system("chmod 777 '"+ self.sub+"'")
 		os.system("rm '"+ self.mov+"'")
 		os.system("rm '"+ self.sub+"'")
 	
@@ -33,8 +35,11 @@ class Movie:
 	def proc(self):
 		self.merge()
 		self.deleteOriginalFiles()
-		self.moveTmpFiles()
+		#self.moveTmpFiles()
 
+
+def quitSpaces():
+	os.system("./quitSpaces.sh " +_FOLDER_WORK_+_FOLDER_)
 
 
 def toUtf8(FILE):
@@ -75,6 +80,10 @@ def getFileNameWithoutFormat(f):
 		fNstring += fileN[-1]
 	return fNstring
 
+
+quitSpaces()
+
+
 print "generateFolderTree"
 generateFolderTree()
 #print findFilesType(_FOLDER_WORK_+_FOLDER_,["mp4","srt"])
@@ -103,5 +112,5 @@ processHash()
 
 for ms in msHash:
 	msHash[ms].proc()
-print "deleteFolderTree"
-deleteFolderTree()
+#print "deleteFolderTree"
+#deleteFolderTree()
