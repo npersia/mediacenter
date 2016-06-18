@@ -12,7 +12,7 @@ echo "# The primary network interface" >> $FILE
 echo auto enp0s3 >> $FILE
 echo "#iface enp0s3 inet dhcp" >> $FILE
 echo iface enp0s3 inet static >> $FILE
-echo address 192.168.11.102 >> $FILE
+echo address 192.168.11.198 >> $FILE
 echo netmask 255.255.255.0 >> $FILE
 echo "#network 192.168.11.0" >> $FILE
 echo "#broadcast 192.168.11.255" >> $FILE
