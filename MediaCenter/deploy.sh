@@ -21,6 +21,6 @@ FINISH="completados/"
 
 #./Config/ConfigIP.sh "/etc/network/interfaces" "192.168.11.198"
 
-
+./ConfigDocker.sh
 
 #halt --reboot
