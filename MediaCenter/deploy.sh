@@ -1,5 +1,5 @@
 USER="npersia"
-SHARE_FOLDER="/media/sf_share/"
+SHARE_FOLDER="/media/sf_pruebas_mediacenter"
 TV_SHOWS="series/"
 MOVIES="peliculas/"
 FINISH="completados/"
@@ -13,7 +13,7 @@ FINISH="completados/"
 
 #./Config/ConfigVBoxLinuxAdditions.sh "/dev/sr0"
 
-./Config/ConfigGroups.sh $USER "/etc/group"
+#./Config/ConfigGroups.sh $USER "/etc/group"
 
 #./Config/ConfigMkvMerge.sh
 
@@ -21,6 +21,10 @@ FINISH="completados/"
 
 #./Config/ConfigIP.sh "/etc/network/interfaces" "192.168.11.198"
 
-./ConfigDocker.sh
+#./Config/ConfigDocker.sh
+
+#./Config/ConfigCouchpotato.sh $SHARE_FOLDER
+
+./Config/ConfigTransmission.sh $SHARE_FOLDER
 
 #halt --reboot
