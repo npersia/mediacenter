@@ -13,8 +13,6 @@ FINISH="completados/"
 
 #./Config/ConfigVBoxLinuxAdditions.sh "/dev/sr0"
 
-#./Config/ConfigGroups.sh $USER "/etc/group"
-
 #./Config/ConfigMkvMerge.sh
 
 #./Config/ConfigCronetab.sh "/home/$USER/MediaCenter/subMerge.py" $SHARE_FOLDER $TV_SHOWS $MOVIES $FINISH "/etc/crontab"
@@ -22,6 +20,10 @@ FINISH="completados/"
 #./Config/ConfigIP.sh "/etc/network/interfaces" "192.168.11.198"
 
 #./Config/ConfigDocker.sh
+
+#./Config/ConfigGroups.sh $USER
+
+./Config/ConfigFolders.sh $SHARE_FOLDER
 
 #./Config/ConfigCouchpotato.sh $SHARE_FOLDER
 

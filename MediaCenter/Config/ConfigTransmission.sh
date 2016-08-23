@@ -2,12 +2,10 @@ FOLDER=$1
 
 docker pull linuxserver/transmission
 
-mkdir $FOLDER/transmission
-mkdir $FOLDER/transmission/config $FOLDER/transmission/downloads $FOLDER/transmission/watch
 
 docker create --name=transmission \
 -v $FOLDER/transmission/config:/config \
--v $FOLDER/transmission/downloads:/downloads \
+-v $FOLDER/downloads:/downloads \
 -v $FOLDER/transmission/watch:/watch \
 -e PGID=0 -e PUID=0 \
 -e TZ=London \
