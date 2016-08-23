@@ -1,32 +1,22 @@
-USER="npersia"
-SHARE_FOLDER="/media/sf_pruebas_mediacenter"
-TV_SHOWS="series/"
-MOVIES="peliculas/"
-FINISH="completados/"
 
 
+source ./conf.sh
 
+#source ./Config/ConfigVBoxLinuxAdditions.sh
 
+#source ./Config/ConfigIP.sh
 
+#source ./Config/ConfigDocker.sh
 
+#source ./Config/ConfigGroups.sh
 
+source ./Config/ConfigFolders.sh
 
-#./Config/ConfigVBoxLinuxAdditions.sh "/dev/sr0"
+source ./Config/ConfigTransmission.sh
 
-#./Config/ConfigMkvMerge.sh
+#source ./Config/ConfigCouchpotato.sh
 
-#./Config/ConfigCronetab.sh "/home/$USER/MediaCenter/subMerge.py" $SHARE_FOLDER $TV_SHOWS $MOVIES $FINISH "/etc/crontab"
+source ./Config/ConfigSickrage.sh
 
-#./Config/ConfigIP.sh "/etc/network/interfaces" "192.168.11.198"
-
-#./Config/ConfigDocker.sh
-
-#./Config/ConfigGroups.sh $USER
-
-./Config/ConfigFolders.sh $SHARE_FOLDER
-
-#./Config/ConfigCouchpotato.sh $SHARE_FOLDER
-
-./Config/ConfigTransmission.sh $SHARE_FOLDER
 
 #halt --reboot

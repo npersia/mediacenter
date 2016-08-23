@@ -1,16 +1,10 @@
-FOLDER=$1
-
-
-mkdir $FOLDER/downloads
-
-
-mkdir $FOLDER/couchpotato
-mkdir $FOLDER/couchpotato/config $FOLDER/couchpotato/movies
-
-mkdir $FOLDER/transmission
-mkdir $FOLDER/transmission/config $FOLDER/transmission/watch
-
-mkdir $FOLDER/sickrage
-mkdir $FOLDER/sickrage/config $FOLDER/sickrage/tv
-
-
+mkdir $DOWNLOAD_FOLDER
+mkdir $COUCHPOTATO_FOLDER
+mkdir $COUCHPOTATO_CONFIG
+mkdir $COUCHPOTATO_MOVIES
+mkdir $TRANSMISSION_FOLDER
+mkdir $TRANSMISSION_CONFIG
+mkdir $TRANSMISSION_WATCH
+mkdir $SICKRAGE_FOLDER
+mkdir $SICKRAGE_CONFIG
+mkdir $SICKRAGE_TV
