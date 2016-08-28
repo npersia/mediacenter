@@ -1,10 +1,10 @@
-
+dpkg --configure -a
 
 source ./conf.sh
 
 source ./Config/ConfigVBoxLinuxAdditions.sh
 
-#source ./Config/ConfigIP.sh
+source ./Config/ConfigIP.sh
 
 #source ./Config/ConfigDocker.sh
 
@@ -19,4 +19,4 @@ source ./Config/ConfigVBoxLinuxAdditions.sh
 #source ./Config/ConfigSickrage.sh
 
 
-#halt --reboot
+halt --reboot
