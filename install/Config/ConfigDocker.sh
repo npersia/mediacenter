@@ -10,4 +10,4 @@ apt-get update
 
 apt-get purge lxc-docker
 
-apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual docker-engine 
+apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual docker-engine docker-compose
