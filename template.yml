@@ -1,0 +1,12 @@
+couchpotato:
+    image: linuxserver/couchpotato
+    ports:
+        - "5050:5050"
+    volumes:
+        - "${COUCHPOTATO_CONFIG}:/config"
+        - "${DOWNLOAD_FOLDER}:/downloads"
+        - "${COUCHPOTATO_MOVIES}:/movies"
+    environment:
+        - PGID=0
+        - PUID=0
+        - TZ=London
