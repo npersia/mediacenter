@@ -16,12 +16,8 @@ if [ "$1" = "2" ];then
 
 	source ./Config/ConfigFolders.sh
 
-	source ./Config/ConfigTransmission.sh
-
-	source ./Config/ConfigCouchpotato.sh
-
-	source ./Config/ConfigSickrage.sh
-
-	source ./Config/ConfigShipYard.sh
-
+	source ./Config/ConfigContainers.sh
+	
+	docker-compose  up -d
+	
 fi
