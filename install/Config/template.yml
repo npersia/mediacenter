@@ -39,3 +39,14 @@ transmission:
         - PUID=0
         - TZ=London
 
+
+minidlna:
+    image: binhex/arch-minidlna
+    network_mode: "host"
+    volumes:
+        - "${DOWNLOAD_FOLDER}:/media"
+        - "${MINIDLNA_FOLDER}:/config"
+        - "${MINIDLNA_LOCALTIME}:/etc/localtime:ro"
+    environment:
+        - PGID=0
+        - PUID=0
