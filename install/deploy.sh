@@ -5,7 +5,7 @@ if [ "$1" = "1" ];then
 
 	source ./Config/ConfigVBoxLinuxAdditions.sh
 
-	source ./Config/ConfigIP.sh
+	#source ./Config/ConfigIP.sh
 	
 	halt --reboot
 fi
@@ -19,5 +19,7 @@ if [ "$1" = "2" ];then
 	source ./Config/ConfigContainers.sh
 	
 	docker-compose  up -d
+
+	halt --reboot
 	
 fi
