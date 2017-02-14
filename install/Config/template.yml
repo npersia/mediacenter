@@ -42,7 +42,7 @@ transmission:
 
 minidlna:
     image: binhex/arch-minidlna
-    network_mode: "host"
+    net: host
     volumes:
         - "${DOWNLOAD_FOLDER}:/media"
         - "${MINIDLNA_FOLDER}:/config"
