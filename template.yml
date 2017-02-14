@@ -1,12 +1,41 @@
 couchpotato:
-    image: linuxserver/couchpotato
-    ports:
-        - "5050:5050"
-    volumes:
-        - "${COUCHPOTATO_CONFIG}:/config"
-        - "${DOWNLOAD_FOLDER}:/downloads"
-        - "${COUCHPOTATO_MOVIES}:/movies"
+	image: linuxserver/couchpotato
+	ports:
+		- "5050:5050"
+	volumes:
+		- "${COUCHPOTATO_CONFIG}:/config"
+		- "${DOWNLOAD_FOLDER}:/downloads"
+		- "${COUCHPOTATO_MOVIES}:/movies"
+	environment:
+		- PGID=0
+		- PUID=0
+		- TZ=London
+
+sickrage:
+	image: linuxserver/sickrage
+	ports:
+		- "8081:8081"
+	volumes:
+		- "${SICKRAGE_CONFIG}:/config"
+		- "${DOWNLOAD_FOLDER}:/downloads"
+		- "${SICKRAGE_TV}:/tv"
+	environment:
+		- PGID=0
+		- PUID=0
+		- TZ=London
+
+transmission:
+	image: linuxserver/transmission
+	ports:
+		- "9091:9091"
+		- "51413:51413"
+		- "51413:51413/udp"
+	volumes:
+		- "${TRANSMISSION_CONFIG}:/config"
+		- "${DOWNLOAD_FOLDER}:/downloads"
+		- "${TRANSMISSION_WATCH}:/watch"
     environment:
         - PGID=0
         - PUID=0
         - TZ=London
+
